@@ -1,7 +1,7 @@
 # Vlocity-Developer-Extension-
 Will have all the dependent code which required to be installed in any salesforce org for seamless working of chrome extension
 
-##  Chrome-Developer-Extension-Metadata 
+##  Chrome-Developer-Extension-Apex
 1. Folder contains three apex class with no test class. 
 2. Deploy it to your salesforce org using  any deployment tool.
 
