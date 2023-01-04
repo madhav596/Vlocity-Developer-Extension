@@ -10,6 +10,6 @@ It has all the dependent code which is  required for the Vlocity developer chrom
 ## Deployment: Next Steps
 
 1.  Use any deployment tool like Visual studio code to deploy this folder into the org.
-2.  OR manually create apex class and copy content from  **force-app/main/default/classes**
+2.  **OR** manually create apex class and copy content from  **force-app/main/default/classes**
 
 
