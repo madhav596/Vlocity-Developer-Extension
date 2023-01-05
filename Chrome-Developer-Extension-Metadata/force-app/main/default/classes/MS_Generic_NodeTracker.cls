@@ -1,5 +1,5 @@
 @RestResource(urlMapping='/nodeTracker/search')
-global without sharing  class MS_Generic_NodeTracker {
+global with sharing  class MS_Generic_NodeTracker {
     
     public static String CONST_NS =  MS_Generic_DataUtilityHelper.CONST_NS; 
     public static  final List<String>  LIST_OF_INPUTNODE_TYPE       =   new List<String>{'Set Values','Checkbox','Currency','Date','Date/Time (Local)','Email','File','Filter','Formula','Geolocation','Image','Lookup','Multi-select','Number','Password','Radio','Radio Group','Range','Select','Selectable Items','Text','Text Area','Time' ,'URL' };

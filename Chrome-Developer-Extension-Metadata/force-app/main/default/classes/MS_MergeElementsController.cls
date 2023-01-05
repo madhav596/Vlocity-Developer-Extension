@@ -1,6 +1,6 @@
 @RestResource(urlMapping='/ms_osip/elements/merge')
 
-global without sharing class MS_MergeElementsController {
+global with sharing class MS_MergeElementsController {
  
     public static String CONST_NS =  MS_Generic_DataUtilityHelper.getCurrentNameSpace();
    
