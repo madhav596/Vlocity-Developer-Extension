@@ -1,5 +1,6 @@
-# Vlocity-Developer-Extension-
+# Vlocity-Developer-Extension
 It has all the dependent code which is  required for the Vlocity developer chrome extension
+
 
 ##  Chrome-Developer-Extension-Metadata
 1. Folder contains three apex class with no test class. 
