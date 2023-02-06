@@ -28,7 +28,7 @@ public without sharing class MS_Generic_DataUtilityHelper {
    
     public static String   getCurrentNameSpace (){  
         String nameSpace='__';
-        for(PackageLicense thisInstalledPkg : [SELECT Id, Status, NamespacePrefix FROM PackageLicense ){
+        for(PackageLicense thisInstalledPkg : [SELECT Id, Status, NamespacePrefix FROM PackageLicense ] ){
             if(CONSTANT_ALLOWED_NAMESPACE.contains(thisInstalledPkg.NamespacePrefix )){
                 nameSpace =thisInstalledPkg.NamespacePrefix+nameSpace;
                 break;
