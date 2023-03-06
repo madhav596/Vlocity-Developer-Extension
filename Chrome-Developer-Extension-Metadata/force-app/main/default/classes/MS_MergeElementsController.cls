@@ -102,7 +102,7 @@ global with sharing class MS_MergeElementsController {
     public static Map<Id, OmniscriptElement>  getOmniscriptComponents(String omniscriptId){
      omniscriptId = String.escapeSingleQuotes(omniscriptId);
 
-     String queryStr = 'SELECT Id, Name,'+CONST_NS+'Order__c, '+CONST_NS+'OmniScriptId__c, '+CONST_NS+'ParentElementId__c, '+CONST_NS+'Type__c,'+CONST_NS+'ParentElementType__c, '+CONST_NS+'ParentElementName__c from '+CONST_NS+'Element__c where '+CONST_NS+'OmniScriptId__c =:omniscriptId order by  '+CONST_NS+'Order__c ASC'; 
+     String queryStr = 'SELECT Id, Name,'+CONST_NS+'Order__c, '+CONST_NS+ 'Active__c, '+  CONST_NS+'OmniScriptId__c, '+CONST_NS+'ParentElementId__c, '+CONST_NS+'Type__c,'+CONST_NS+'ParentElementType__c, '+CONST_NS+'ParentElementName__c from '+CONST_NS+'Element__c where '+CONST_NS+'OmniScriptId__c =:omniscriptId order by  '+CONST_NS+'Order__c ASC'; 
   
         Map<Id, OmniscriptElement> mapOfOmniscriptElement = new Map<Id, OmniscriptElement>();
        
@@ -110,6 +110,8 @@ global with sharing class MS_MergeElementsController {
             OmniscriptElement omniElementObj = new OmniscriptElement();
             omniElementObj.Id       = (String) sObj.get('Id');
             omniElementObj.Name     = (String) sObj.get('Name');
+            omniElementObj.IsActive = (Boolean) sObj.get(CONST_NS+ 'Active__c');
+            omniElementObj.elementOrder =(Double) sObj.get(CONST_NS+ 'Order__c');
             omniElementObj.ElementType   = (String) sObj.get(CONST_NS+ 'Type__c');
             omniElementObj.ParentElementId  = (String) sObj.get(CONST_NS+ 'ParentElementId__c'); 
             mapOfOmniscriptElement.put(omniElementObj.Id, omniElementObj);
@@ -374,8 +376,12 @@ global with sharing class MS_MergeElementsController {
     public class OmniscriptElement {
         @AuraEnabled public String  Id = '';
         @AuraEnabled public String  Name = '';
-       @AuraEnabled public String  ElementType ;
+        @AuraEnabled public String  ElementType ;
         @AuraEnabled public String  ParentElementId ;
+        @AuraEnabled public Boolean  IsActive ;
+        @AuraEnabled public Double  elementOrder ;
+        
+        @AuraEnabled public String  propertyJSON = '';
       
     }
     
