@@ -1,6 +1,6 @@
 public without sharing class MS_Generic_DataUtilityHelper {
      
-    public static String CONSTANT_EXTENSION_APEX_VERSION            = '1.1.1';
+    public static String CONSTANT_EXTENSION_APEX_VERSION            = '1.1.4';
 
     public static List<String> CONSTANT_ALLOWED_NAMESPACE           =  new List<String> {'vlocity_cmt','vlocity_ins','vlocity_ps'};
     public static String CONST_NS =  getCurrentNameSpace(); 
@@ -28,7 +28,7 @@ public without sharing class MS_Generic_DataUtilityHelper {
    
     public static String   getCurrentNameSpace (){  
         String nameSpace='__';
-        for(PackageLicense thisInstalledPkg : [SELECT Id, Status, NamespacePrefix FROM PackageLicense ] ){
+        for(PackageLicense thisInstalledPkg : [SELECT Id, Status, NamespacePrefix FROM PackageLicense  ]){
             if(CONSTANT_ALLOWED_NAMESPACE.contains(thisInstalledPkg.NamespacePrefix )){
                 nameSpace =thisInstalledPkg.NamespacePrefix+nameSpace;
                 break;
